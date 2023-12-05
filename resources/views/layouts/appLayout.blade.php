@@ -19,7 +19,7 @@
           </a>
       </li>
         <li>
-          <a href="" class="border-2 border-blue-600 rounded font-medium py-1 px-2 bg-blue-600 text-white hover:text-black hover:bg-transparent transition-all transition-300">
+          <a href="{{ route('signIn') }}" class="border-2 border-blue-600 rounded font-medium py-1 px-2 bg-blue-600 text-white hover:text-black hover:bg-transparent transition-all transition-300">
             Sign In
           </a>
         </li>
