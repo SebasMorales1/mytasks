@@ -12,17 +12,28 @@
     <nav class="w-11/12 mx-auto flex justify-between">
       <a href="/">Logo</a>
 
-      <ul class="flex gap-3">
-        <li>
-          <a href="{{ route('signUp') }}" class="border-2 border-blue-600 rounded font-medium py-1 px-2 hover:bg-blue-600 hover:text-white transition-all transition-300">
-            Sign Up
-          </a>
-      </li>
-        <li>
-          <a href="{{ route('signIn') }}" class="border-2 border-blue-600 rounded font-medium py-1 px-2 bg-blue-600 text-white hover:text-black hover:bg-transparent transition-all transition-300">
-            Sign In
-          </a>
-        </li>
+      <ul class="flex gap-3 w-fit">
+        @if(auth()->user())
+          <li>
+            <a href="" class="border-2 border-blue-600 rounded font-medium py-1 px-2 bg-blue-600 text-white hover:text-black hover:bg-transparent transition-all transition-300">
+              Dashboard
+            </a>
+          </li>
+          <li title="{{ auth()->user()->name }}">
+            <livewire:btn-logout/>
+          </li>
+        @else
+          <li>
+            <a href="{{ route('signUp') }}" class="border-2 border-blue-600 rounded font-medium py-1 px-2 hover:bg-blue-600 hover:text-white transition-all transition-300">
+              Sign Up
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('signIn') }}" class="border-2 border-blue-600 rounded font-medium py-1 px-2 bg-blue-600 text-white hover:text-black hover:bg-transparent transition-all transition-300">
+              Sign In
+            </a>
+          </li>
+        @endif
       </ul>
     </nav>
   </header>
